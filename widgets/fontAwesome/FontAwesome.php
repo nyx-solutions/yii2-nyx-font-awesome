@@ -3,7 +3,7 @@
     namespace nox\widgets\fonts\fontAwesome;
 
     use yii\base\Widget;
-    use common\helpers\HtmlHelper;
+    use nox\helpers\HtmlHelper;
 
     /**
      * Class FontAwesome

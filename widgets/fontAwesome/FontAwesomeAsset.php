@@ -17,7 +17,7 @@
         /**
          * @inheritdoc
          */
-        public $sourcePath = '@common/widgets/fonts/fontAwesome/assets';
+        public $sourcePath = '@bower/fontawesome';
 
         /**
          * @inheritdoc

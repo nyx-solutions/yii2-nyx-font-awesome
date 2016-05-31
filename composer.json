@@ -1,0 +1,41 @@
+{
+  "name": "nox-it/yii2-nox-font-awesome",
+  "description": "Yii2 Font-Awesome Widget",
+  "type": "library",
+  "keywords": [
+    "yii2",
+    "extension",
+    "migration",
+    "framework",
+    "php"
+  ],
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Jonatas Sas",
+      "email": "atendimento@jsas.com.br"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0",
+    "nox-it/yii2-nox": "1.*",
+    "nox-it/yii2-nox-helpers": "1.*",
+    "bower-asset/fontawesome": "4.6*"
+  },
+  "autoload": {
+    "psr-4": {
+      "nox\\widgets\\fontAwesome\\": "widgets/fontAwesome"
+    }
+  },
+  "config": {
+    "process-timeout": 1800
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://bitbucket.org/noxit-plugins/yii2-nox-font-awesome"
+    }
+  ]
+}

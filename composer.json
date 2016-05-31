@@ -22,7 +22,7 @@
     "php": ">=5.4.0",
     "nox-it/yii2-nox": "1.*",
     "nox-it/yii2-nox-helpers": "1.*",
-    "bower-asset/fontawesome": "4.6*"
+    "bower-asset/fontawesome": "4.6.*"
   },
   "autoload": {
     "psr-4": {
@@ -31,6 +31,12 @@
   },
   "config": {
     "process-timeout": 1800
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
   },
   "repositories": [
     {

@@ -12,8 +12,6 @@
      * @author       Jonatas Sas
      *
      * @package      nox\widgets\fonts
-     *
-     * @todo-project Implementar o stack
      */
     class FontAwesome extends Widget
     {

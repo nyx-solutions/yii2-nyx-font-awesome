@@ -9,7 +9,7 @@
     "framework",
     "php"
   ],
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "version": "1.0.1",
   "authors": [
     {

@@ -10,7 +10,7 @@
     "php"
   ],
   "license": "BSD-3-Clause",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     {
       "name": "Jonatas Sas",
@@ -22,7 +22,7 @@
     "php": ">=5.4.0",
     "nox-it/yii2-nox": "1.*",
     "nox-it/yii2-nox-helpers": "1.*",
-    "bower-asset/fontawesome": "4.6.*"
+    "bower-asset/fontawesome": "4.*"
   },
   "autoload": {
     "psr-4": {

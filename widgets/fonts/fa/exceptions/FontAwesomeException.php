@@ -1,6 +1,6 @@
 <?php
 
-    namespace nox\widgets\fonts\fontAwesome;
+    namespace nox\widgets\fonts\fa\exceptions;
 
     use yii\base\Exception;
 
@@ -9,8 +9,6 @@
      *
      * @category Exception
      * @author   Jonatas Sas
-     *
-     * @package  nox\widgets\fonts
      */
     class FontAwesomeException extends Exception
     {

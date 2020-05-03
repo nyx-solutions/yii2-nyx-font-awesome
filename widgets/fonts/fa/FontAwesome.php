@@ -1,38 +1,38 @@
 <?php
 
-    namespace nox\widgets\fonts\fontAwesome;
+    namespace nox\widgets\fonts\fa;
 
-    use yii\base\Widget;
     use nox\helpers\HtmlHelper;
+    use nox\widgets\fonts\fa\assets\FontAwesomeAsset;
+    use nox\widgets\fonts\fa\exceptions\FontAwesomeException;
+    use yii\base\Widget;
 
     /**
      * Class FontAwesome
      *
      * @category     Widget
      * @author       Jonatas Sas
-     *
-     * @package      nox\widgets\fonts
      */
     class FontAwesome extends Widget
     {
-        const FLIP_VERTICAL = 1;
+        const FLIP_VERTICAL   = 1;
         const FLIP_HORIZONTAL = 2;
 
-        const SIZE_NR = '';
-        const SIZE_LG = 'lg';
-        const SIZE_2X = '2x';
-        const SIZE_3X = '3x';
-        const SIZE_4X = '4x';
-        const SIZE_5X = '5x';
+        const SIZE_NR         = '';
+        const SIZE_LG         = 'lg';
+        const SIZE_2X         = '2x';
+        const SIZE_3X         = '3x';
+        const SIZE_4X         = '4x';
+        const SIZE_5X         = '5x';
 
-        const ROTATE_90 = '90';
-        const ROTATE_180 = '180';
-        const ROTATE_270 = '270';
+        const ROTATE_90       = 90;
+        const ROTATE_180      = 180;
+        const ROTATE_270      = 270;
 
         /**
          * @var array
          */
-        protected $icons = [
+        protected array $icons = [
             'adjust',
             'adn',
             'align-center',
@@ -631,90 +631,92 @@
         /**
          * @var array
          */
-        protected $classes = [];
+        protected array $classes = [];
 
         /**
          * @var string
          */
-        protected $realClasses = '';
+        protected string $realClasses = '';
 
         /**
          * @var string
          */
-        public $tag = 'i';
+        public string $tag = 'i';
 
         /**
          * @var string
          */
-        public $class = 'fa';
+        public string $class = 'fa';
 
         /**
          * @var string
          */
-        public $prefix = 'fa-';
+        public string $prefix = 'fa-';
 
         /**
          * @var bool
          */
-        public $spin = false;
+        public bool $spin = false;
 
         /**
          * @var bool
          */
-        public $pulse = false;
+        public bool $pulse = false;
 
         /**
          * @var bool
          */
-        public $rotate = false;
+        public bool $rotate = false;
 
         /**
          * @var bool
          */
-        public $flip = false;
+        public bool $flip = false;
 
         /**
          * @var bool
          */
-        public $border = false;
+        public bool $border = false;
 
         /**
          * @var bool
          */
-        public $square = false;
+        public bool $square = false;
 
         /**
          * @var bool
          */
-        public $fw = false;
+        public bool $fw = false;
 
         /**
          * @var string
          */
-        public $icon = '';
+        public string $icon = '';
 
         /**
          * @var string
          */
-        public $size = self::SIZE_NR;
+        public string $size = self::SIZE_NR;
 
         /**
          * @var int
          */
-        public $flipDirection = self::FLIP_VERTICAL;
+        public int $flipDirection = self::FLIP_VERTICAL;
 
         /**
          * @var int
          */
-        public $rotateDegrees = self::ROTATE_90;
+        public int $rotateDegrees = self::ROTATE_90;
 
         /**
          * @var string
          */
-        public $additionalClasses = '';
+        public string $additionalClasses = '';
 
         /**
          * @inheritdoc
+         *
+         * @throws FontAwesomeException
          */
         public function run()
         {
@@ -744,15 +746,7 @@
 
             $this->size = (string)$this->size;
 
-            if (!in_array($this->size, [
-                self::SIZE_NR,
-                self::SIZE_LG,
-                self::SIZE_2X,
-                self::SIZE_3X,
-                self::SIZE_4X,
-                self::SIZE_5X
-            ])
-            ) {
+            if (!in_array($this->size, [self::SIZE_NR, self::SIZE_LG, self::SIZE_2X, self::SIZE_3X, self::SIZE_4X, self::SIZE_5X])) {
                 $this->size = self::SIZE_NR;
             }
 
@@ -770,40 +764,40 @@
                 $this->prefix = 'fa-';
             }
 
-            if (!preg_match('/\-$/', $this->prefix)) {
+            if (!preg_match('/-$/', $this->prefix)) {
                 $this->prefix .= '-';
             }
 
             if ((bool)$this->spin) {
-                $this->classes[] = $this->prefix . 'spin';
+                $this->classes[] = "{$this->prefix}spin";
             }
 
             if ((bool)$this->pulse) {
-                $this->classes[] = $this->prefix . 'pulse';
+                $this->classes[] = "{$this->prefix}pulse";
             }
 
             if ((bool)$this->rotate) {
-                $this->classes[] = $this->prefix . 'rotate-' . $this->rotateDegrees;
+                $this->classes[] = "{$this->prefix}rotate-{$this->rotateDegrees}";
             }
 
             if ((bool)$this->flip) {
-                $this->classes[] = $this->prefix . 'flip';
+                $this->classes[] = "{$this->prefix}flip";
             }
 
             if ((bool)$this->border) {
-                $this->classes[] = $this->prefix . 'border';
+                $this->classes[] = "{$this->prefix}border";
             }
 
             if ((bool)$this->square) {
-                $this->classes[] = $this->prefix . 'square';
+                $this->classes[] = "{$this->prefix}square";
             }
 
             if ((bool)$this->fw) {
-                $this->classes[] = $this->prefix . 'fw';
+                $this->classes[] = "{$this->prefix}fw";
             }
 
             if (!empty($this->size)) {
-                $this->classes[] = $this->prefix . $this->size;
+                $this->classes[] = $this->prefix.$this->size;
             }
 
             $icon = $this->getIcon($this->icon);
@@ -814,7 +808,7 @@
 
             $this->classes[] = $icon;
 
-            $this->realClasses = implode(' ', $this->classes) . ((!empty($this->additionalClasses)) ? ' ' : '') . trim($this->additionalClasses);
+            $this->realClasses = implode(' ', $this->classes).((!empty($this->additionalClasses)) ? ' ' : '').trim($this->additionalClasses);
         }
 
         /**
@@ -835,7 +829,7 @@
             $icon = trim((string)$icon);
 
             if (in_array($icon, $this->icons)) {
-                return $this->prefix . $icon;
+                return $this->prefix.$icon;
             }
 
             return '';

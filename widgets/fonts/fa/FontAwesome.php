@@ -1,10 +1,10 @@
 <?php
 
-    namespace nox\widgets\fonts\fa;
+    namespace nyx\widgets\fonts\fa;
 
-    use nox\helpers\HtmlHelper;
-    use nox\widgets\fonts\fa\assets\FontAwesomeAsset;
-    use nox\widgets\fonts\fa\exceptions\FontAwesomeException;
+    use nyx\helpers\HtmlHelper;
+    use nyx\widgets\fonts\fa\assets\FontAwesomeAsset;
+    use nyx\widgets\fonts\fa\exceptions\FontAwesomeException;
     use yii\base\Widget;
 
     /**

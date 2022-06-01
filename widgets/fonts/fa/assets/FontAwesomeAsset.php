@@ -1,6 +1,6 @@
 <?php
 
-    namespace nox\widgets\fonts\fa\assets;
+    namespace nyx\widgets\fonts\fa\assets;
 
     use yii\web\AssetBundle;
     use yii\web\YiiAsset;

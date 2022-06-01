@@ -1,6 +1,6 @@
 <?php
 
-    namespace nox\widgets\fonts\fa\exceptions;
+    namespace nyx\widgets\fonts\fa\exceptions;
 
     use yii\base\Exception;
 

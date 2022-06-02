@@ -1,4 +1,4 @@
-Yii PHP Framework Version 2 / NOX FontAwesome Widget
+Yii PHP Framework Version 2 / NYX FontAwesome Widget
 ====================================================
 
 This extension provides an FontAwesome AssetBundle and Widget for Yii PHP Framework Version 2.
